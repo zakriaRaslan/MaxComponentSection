@@ -6,7 +6,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   imports: [],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css',
-  encapsulation:ViewEncapsulation.None
 })
 export class ButtonComponent {
 

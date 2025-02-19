@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { ControllComponent } from "../../../shared/controll/controll.component";
+import { ControlComponent } from "../../../shared/control/control.component";
+import { ButtonComponent } from '../../../shared/button/button.component';
 
 @Component({
   selector: 'app-new-ticket',
   standalone: true,
-  imports: [ControllComponent],
+  imports: [ControlComponent, ButtonComponent],
   templateUrl: './new-ticket.component.html',
   styleUrl: './new-ticket.component.css'
 })
