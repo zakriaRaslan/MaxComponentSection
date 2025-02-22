@@ -1,4 +1,4 @@
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import { Component, contentChild, ContentChild, ElementRef, input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -9,7 +9,7 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
   encapsulation:ViewEncapsulation.None,
   host:{
     class: 'control', // this will add a class "control" to all the <app-control/> in the project
-    // '(click)':'onClickFunc()', // this will listen to the event click to run the Function (onclickFunc)
+    '(click)':'onClickFunc()', // this will listen to the event click to run the Function (onclickFunc)
   }
 })
 export class ControlComponent {
@@ -19,10 +19,12 @@ export class ControlComponent {
   //   console.log("clicked from decorator")
   // }
 label = input.required<string>();
+// @ContentChild('input') private inputContent? :ElementRef<HTMLInputElement | HTMLTextAreaElement>
+private inputContent = contentChild.required<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input')
 
-
-// onClickFunc(){
-//   console.log("Clicked");
-// }
+onClickFunc(){
+  console.log("Clicked");
+  console.log(this.inputContent())
+}
 
 }
